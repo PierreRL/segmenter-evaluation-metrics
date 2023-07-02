@@ -1,11 +1,12 @@
 from __future__ import annotations
+
 import random
-from util import Seg, Eval, calc_IR
 random.seed(1000)
-from typing import Any, Callable
+from util import Seg, Eval, calc_IR
 from segeval import window_diff, boundary_similarity, pk, segmentation_similarity
 import segeval
 from tabulate import tabulate
+
 from nim_metric import mean_max_intersection_union, mean_matched_intersection_union
 
 def main():
@@ -57,7 +58,7 @@ def main():
         headers.append(eval.name)
     
     print(tabulate(eval_data, headers))
-    print('-'*50)
+    print('-'*120)
     print(tabulate(ir_data, ir_headers))
     
 main()
