@@ -49,7 +49,7 @@ def main():
         matrix = segeval.boundary_confusion_matrix(hyp.lengths, ref.lengths)
         precision, recall, f1 = calc_IR(hyp, ref)
 
-        ir_row = [hyp.name, segeval.precision(matrix, None), segeval.precision(matrix, 1), segeval.fmeasure(matrix), precision, recall, f1, segeval.boundary_similarity(hyp.lengths, ref.lengths)]
+        ir_row = [hyp.name, segeval.precision(matrix), segeval.recall(matrix), segeval.fmeasure(matrix), precision, recall, f1, segeval.boundary_similarity(hyp.lengths, ref.lengths)]
         ir_data.append(ir_row)
 
     headers = ['Hypothesis']
